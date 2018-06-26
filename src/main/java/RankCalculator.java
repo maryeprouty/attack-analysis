@@ -10,13 +10,10 @@
 */
 
 import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.io.PrintWriter;
-import java.io.FileNotFoundException;
+
 
 class RankCalculator {
 
@@ -63,7 +60,7 @@ class RankCalculator {
         int uncertaintyCountOnes = 0;
 
         Double weightedJSI;
-        Double weight = 0.05;
+        Double weight = 0.1;
         Double weightedIntersection = 0.0;
         Double weightedUnion = 0.0;
 
