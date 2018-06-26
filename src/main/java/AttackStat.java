@@ -1,4 +1,4 @@
-/**
+/*
 * This class holds the statistics relating a tactic vector to an attack vector,
 * which can be used to rank how similar each tactic is to an attack vector.
 *
@@ -9,7 +9,7 @@
 
 import java.lang.Comparable;
 
-public class AttackStat implements Comparable<AttackStat> {
+class AttackStat implements Comparable<AttackStat> {
 
     private String tactic;
     private Double rankValue;
@@ -19,7 +19,7 @@ public class AttackStat implements Comparable<AttackStat> {
     /**
     * No-args constructor for AttackStat.
     */
-    public AttackStat() {
+    AttackStat() {
         this(0.0, 0.0, "0");
     }
 
@@ -30,7 +30,7 @@ public class AttackStat implements Comparable<AttackStat> {
     * @param techniques Specifies how many techniques this attack employs out of
     * all techniques in a tactic.
     */
-    public AttackStat(Double rankValue, Double uncertainty, String techniques) {
+    AttackStat(Double rankValue, Double uncertainty, String techniques) {
         this.tactic = "Unknown Tactic";
         this.rankValue = rankValue;
         this.uncertainty = uncertainty;
@@ -42,7 +42,7 @@ public class AttackStat implements Comparable<AttackStat> {
     * A setter for the tactic associated with this AttackStat.
     * @param tacticName Specifies the name of the tactic to be set.
     */
-    public void setTactic(String tacticName) {
+    void setTactic(String tacticName) {
         this.tactic = tacticName;
     }
 
@@ -50,13 +50,13 @@ public class AttackStat implements Comparable<AttackStat> {
     * A getter for the rankValue associated with this AttackStat.
     * @return double Returns the numerical rank value.
     */
-    public double getRankValue() {
+    private double getRankValue() {
         return this.rankValue;
     }
 
 
     public int compareTo(AttackStat other) {
-        Double otherRankValue = ((AttackStat) other).getRankValue();
+        Double otherRankValue = other.getRankValue();
         return otherRankValue.compareTo(this.rankValue);
     }
 

@@ -1,4 +1,4 @@
-/**
+/*
 *
 * This program contains the main method for analyzing attack behaviors.
 *
@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 
 public class AttackAnalysis {
 
-    private static ArrayList<RankCalculator> rankers = new ArrayList<RankCalculator>();
+    private static ArrayList<RankCalculator> rankers = new ArrayList<>();
 
     /**
     * The main method interprets the data from two csv files of tactics and attacks in

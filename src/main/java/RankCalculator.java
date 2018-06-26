@@ -1,4 +1,4 @@
-/**
+/*
 * This program computes the Jaccard Similarity Index (JSI), or another statistic of
 * likelihood, for an attack vector and each tactic vector in the ATT&CK matrix as
 * specified on attack.mitre.org. These values are then ranked to illustrate which
@@ -18,17 +18,17 @@ import java.util.Collections;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
-public class RankCalculator {
+class RankCalculator {
 
-    public ArrayList<ArrayList<AttackStat>> stats = new ArrayList<ArrayList<AttackStat>>();
-    public static ArrayList<String> systems = new ArrayList<String>(Arrays.asList("jsi",
+    private ArrayList<ArrayList<AttackStat>> stats = new ArrayList<>();
+    static ArrayList<String> systems = new ArrayList<>(Arrays.asList("jsi",
         "weighted", "techniques"));
-    public String rankSystem;
+    String rankSystem;
 
     /**
     * No-arg constructor makes jsi the default ranking method.
     */
-    public RankCalculator() {
+    RankCalculator() {
         this("jsi");
     }
 
@@ -37,7 +37,7 @@ public class RankCalculator {
     * @param rankSystem Specifies which of jsi, weighted, or techniques should be
     * utilized to rank tactics.
     */
-    public RankCalculator(String rankSystem) {
+    RankCalculator(String rankSystem) {
         this.rankSystem = rankSystem;
     }
 
@@ -52,17 +52,18 @@ public class RankCalculator {
     * @return stat Returns the AttackStat representing the stat for a comparison
     * between the tactic and attack vector.
     */
-    public AttackStat computeStat(ArrayList<String> tactic, ArrayList<String> attack) {
+    private AttackStat computeStat(ArrayList<String> tactic, ArrayList<String> attack) {
 
-        Double jSIndex = 0.0;
-        Double percentOfTechniques = 0.0;
+        Double jSIndex;
+        Double percentOfTechniques;
         int intersection = 0;
         int union = 0;
         int tacticOnes = 0;
         int uncertaintyCount = 0;
         int uncertaintyCountOnes = 0;
 
-        Double weightedJSI = 0.0;
+        Double weightedJSI;
+        Double weight = 0.05;
         Double weightedIntersection = 0.0;
         Double weightedUnion = 0.0;
 
@@ -100,8 +101,8 @@ public class RankCalculator {
                     union++;
                     weightedUnion++;
                 } else if (tacticBit.equals("0") && attackBit.equals("0")) {
-                    weightedIntersection += 0.1;
-                    weightedUnion += 0.1;
+                    weightedIntersection += weight;
+                    weightedUnion += weight;
                 } else {
                     System.err.println("Attack bit has invalid value");
                 }
@@ -115,12 +116,18 @@ public class RankCalculator {
             Double percentUncertainty = ((double) uncertaintyCountOnes / (double) tacticOnes) * 100;
             String techniques = Integer.toString(intersection) + "/" + Integer.toString(tacticOnes);
 
-            if (rankSystem.equals("techniques")) {
-                myStat = new AttackStat(percentOfTechniques, percentUncertainty, techniques);
-            } else if (rankSystem.equals("weighted")) {
-                myStat = new AttackStat(weightedJSI, percentUncertainty, techniques);
-            } else {
-                myStat = new AttackStat(jSIndex, percentUncertainty, techniques);
+            switch(rankSystem) {
+                case "techniques":
+                    myStat = new AttackStat(percentOfTechniques, percentUncertainty, techniques);
+                    break;
+                case "weighted":
+                    myStat = new AttackStat(weightedJSI, percentUncertainty, techniques);
+                    break;
+                case "jsi":
+                    myStat = new AttackStat(jSIndex, percentUncertainty, techniques);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid ranking system: " + rankSystem);
             }
 
 
@@ -137,14 +144,14 @@ public class RankCalculator {
     * @param tactics Specifies the map of tactics to compare each attack to.
     * @param attacks Specifies the list of attack vectors being compared to tactics.
     */
-    public void rankTactics(Map<String, ArrayList<String>> tactics,
+    void rankTactics(Map<String, ArrayList<String>> tactics,
         ArrayList<ArrayList<String>> attacks) {
 
         for (ArrayList<String> attack: attacks) {
 
             //For each attack vector in the attack file, compute the stats for
             //all tactics.
-            ArrayList<AttackStat> thisAttackStats = new ArrayList<AttackStat>();
+            ArrayList<AttackStat> thisAttackStats = new ArrayList<>();
 
             for (Map.Entry<String, ArrayList<String>> entry: tactics.entrySet()) {
                 String tactic = entry.getKey();

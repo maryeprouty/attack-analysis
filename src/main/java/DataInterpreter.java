@@ -1,4 +1,4 @@
-/**
+/*
 * This class serves to manipulate data from csv files into data structures
 * that can be used to compute the Jaccard Similarity Index for tactics vs.
 * attack vectors.
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DataInterpreter {
+class DataInterpreter {
 
     /**
     * This method reads in a data file in csv format and parses it by comma to create
@@ -27,10 +27,10 @@ public class DataInterpreter {
     * @param filename Specifies which file is being read.
     * @return tactics Returns the list of bit vectors.
     */
-    public static ArrayList<ArrayList<String>> dataFileToList(String filename) {
+    static ArrayList<ArrayList<String>> dataFileToList(String filename) {
 
-        BufferedReader inputReader = null;
-        ArrayList<ArrayList<String>> dataList = new ArrayList<ArrayList<String>>();
+        BufferedReader inputReader;
+        ArrayList<ArrayList<String>> dataList = new ArrayList<>();
         String fileStr = "src/main/resources/" + filename;
 
         try {
@@ -43,7 +43,7 @@ public class DataInterpreter {
             while (dataStr != null) {
                 if (index > 0) {
                     String[] preVector = dataStr.split(",");
-                    ArrayList<String> vector = new ArrayList<String>(Arrays.asList(preVector));
+                    ArrayList<String> vector = new ArrayList<>(Arrays.asList(preVector));
                     dataList.add(vector);
                 }
                 dataStr = inputReader.readLine();
@@ -67,9 +67,9 @@ public class DataInterpreter {
     * @param list Specifies which list is being converted to a map.
     * @return map Returns the map of the attributes to vectors.
     */
-    public static Map<String, ArrayList<String>> listToMap(ArrayList<ArrayList<String>> list) {
+    static Map<String, ArrayList<String>> listToMap(ArrayList<ArrayList<String>> list) {
 
-        Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+        Map<String, ArrayList<String>> map = new HashMap<>();
         for (ArrayList<String> innerList: list) {
             String tactic = innerList.remove(innerList.size() - 1);
             map.put(tactic, innerList);
