@@ -1,0 +1,361 @@
+
+Attack 1.
+	Initial Access
+		81.82% likelihood
+		9/10 techniques used
+	Lateral Movement
+		3.85% likelihood
+		1/17 techniques used
+	Credential Access
+		3.45% likelihood
+		1/20 techniques used
+	Defense Evasion
+		2.99% likelihood
+		2/59 techniques used
+	Privelege Escalation
+		2.70% likelihood
+		1/28 techniques used
+	Execution
+		2.50% likelihood
+		1/31 techniques used
+	Persistence
+		1.54% likelihood
+		1/56 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 2.
+	Command and Control
+		84.21% likelihood
+		16/21 techniques used
+	Lateral Movement
+		6.25% likelihood
+		2/17 techniques used
+	Privelege Escalation
+		2.27% likelihood
+		1/28 techniques used
+	Persistence
+		1.47% likelihood
+		1/56 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Defense Evasion
+		0.00% likelihood
+		0/59 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	
+
+Attack 3.
+	Execution
+		79.41% likelihood
+		27/31 techniques used
+	Defense Evasion
+		20.27% likelihood
+		15/59 techniques used
+	Persistence
+		9.21% likelihood
+		7/56 techniques used
+	Lateral Movement
+		6.52% likelihood
+		3/17 techniques used
+	Privelege Escalation
+		3.57% likelihood
+		2/28 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 4.
+	Exfiltration
+		100.00% likelihood
+		7/9 techniques used
+	Persistence
+		0.00% likelihood
+		0/56 techniques used
+	Privelege Escalation
+		0.00% likelihood
+		0/28 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Lateral Movement
+		0.00% likelihood
+		0/17 techniques used
+	Defense Evasion
+		0.00% likelihood
+		0/59 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 5.
+	Command and Control
+		62.50% likelihood
+		10/21 techniques used
+	Credential Access
+		8.33% likelihood
+		1/20 techniques used
+	Lateral Movement
+		7.69% likelihood
+		1/17 techniques used
+	Defense Evasion
+		5.56% likelihood
+		1/59 techniques used
+	Persistence
+		0.00% likelihood
+		0/56 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Privelege Escalation
+		0.00% likelihood
+		0/28 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	
+
+Attack 6.
+	Persistence
+		77.78% likelihood
+		7/56 techniques used
+	Privelege Escalation
+		40.00% likelihood
+		4/28 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Lateral Movement
+		0.00% likelihood
+		0/17 techniques used
+	Defense Evasion
+		0.00% likelihood
+		0/59 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 7.
+	Lateral Movement
+		75.00% likelihood
+		3/17 techniques used
+	Execution
+		33.33% likelihood
+		1/31 techniques used
+	Persistence
+		0.00% likelihood
+		0/56 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Privelege Escalation
+		0.00% likelihood
+		0/28 techniques used
+	Defense Evasion
+		0.00% likelihood
+		0/59 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 8.
+	Lateral Movement
+		30.00% likelihood
+		3/17 techniques used
+	Execution
+		20.00% likelihood
+		1/31 techniques used
+	Persistence
+		0.00% likelihood
+		0/56 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Privelege Escalation
+		0.00% likelihood
+		0/28 techniques used
+	Defense Evasion
+		0.00% likelihood
+		0/59 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Initial Access
+		0.00% likelihood
+		0/10 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 9.
+	Initial Access
+		20.00% likelihood
+		2/10 techniques used
+	Privelege Escalation
+		3.45% likelihood
+		1/28 techniques used
+	Persistence
+		1.75% likelihood
+		1/56 techniques used
+	Defense Evasion
+		1.67% likelihood
+		1/59 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Lateral Movement
+		0.00% likelihood
+		0/17 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
+Attack 10.
+	Persistence
+		50.00% likelihood
+		1/56 techniques used
+	Privelege Escalation
+		50.00% likelihood
+		1/28 techniques used
+	Defense Evasion
+		50.00% likelihood
+		1/59 techniques used
+	Initial Access
+		40.00% likelihood
+		2/10 techniques used
+	Exfiltration
+		0.00% likelihood
+		0/9 techniques used
+	Execution
+		0.00% likelihood
+		0/31 techniques used
+	Lateral Movement
+		0.00% likelihood
+		0/17 techniques used
+	Credential Access
+		0.00% likelihood
+		0/20 techniques used
+	Discovery
+		0.00% likelihood
+		0/19 techniques used
+	Collection
+		0.00% likelihood
+		0/13 techniques used
+	Command and Control
+		0.00% likelihood
+		0/21 techniques used
+	
+
