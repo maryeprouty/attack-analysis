@@ -21,7 +21,7 @@ Attack 1.
 	Persistence
 		0.00% likelihood
 		0/56 techniques used
-	Privelege Escalation
+	Privilege Escalation
 		0.00% likelihood
 		0/28 techniques used
 	Discovery
@@ -39,7 +39,7 @@ Attack 2.
 	Persistence
 		75.00% likelihood
 		3/56 techniques used
-	Privelege Escalation
+	Privilege Escalation
 		50.00% likelihood
 		2/28 techniques used
 	Defense Evasion
@@ -99,7 +99,7 @@ Attack 3.
 	Initial Access
 		7.32% likelihood
 		3/10 techniques used
-	Privelege Escalation
+	Privilege Escalation
 		4.88% likelihood
 		2/28 techniques used
 	Exfiltration
@@ -117,7 +117,7 @@ Attack 4.
 	Defense Evasion
 		23.53% likelihood
 		4/59 techniques used
-	Privelege Escalation
+	Privilege Escalation
 		17.65% likelihood
 		3/28 techniques used
 	Initial Access
@@ -159,7 +159,7 @@ Attack 5.
 	Command and Control
 		12.50% likelihood
 		5/21 techniques used
-	Privelege Escalation
+	Privilege Escalation
 		10.00% likelihood
 		4/28 techniques used
 	Credential Access
@@ -183,12 +183,12 @@ Attack 6.
 	Defense Evasion
 		46.67% likelihood
 		7/59 techniques used
-	Privelege Escalation
-		26.67% likelihood
-		4/28 techniques used
 	Execution
 		26.67% likelihood
 		4/31 techniques used
+	Privilege Escalation
+		26.67% likelihood
+		4/28 techniques used
 	Persistence
 		20.00% likelihood
 		3/56 techniques used

@@ -7,6 +7,10 @@
 * @since 2018-06-25
 */
 
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleGraph;
+
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
@@ -77,6 +81,10 @@ public class AttackAnalysis {
                 System.err.println("File not found");
             }
         }
+
+        TacticGraphBuilder.setTactics(tacticsMap);
+        Graph<String, DefaultEdge> associationGraph = TacticGraphBuilder.createGraph();
+        System.out.println(associationGraph.edgesOf("Persistence"));
 
 
 
