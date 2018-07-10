@@ -1,5 +1,6 @@
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleDirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
 import java.util.ArrayList;
@@ -9,7 +10,6 @@ import java.util.Map;
  * Created by maryprouty on 7/10/18.
  */
 
-//Move param for tactics to constructor/variable
 class TacticGraphBuilder {
 
     private static Map<String, ArrayList<String>> tactics;
@@ -19,7 +19,7 @@ class TacticGraphBuilder {
     }
 
     //For now, not including any dependencies - just the associations from the object diagram
-    static Graph<String, DefaultEdge> createGraph() {
+    static Graph<String, DefaultEdge> createAssociationGraph() {
 
         Graph<String, DefaultEdge> g = new SimpleGraph(DefaultEdge.class);
 
@@ -52,8 +52,25 @@ class TacticGraphBuilder {
         g.addEdge("Exfiltration", "Modify data");
         g.addEdge("Command and Control", "Hide activities");
 
-
         return g;
+
+    }
+
+    static SimpleDirectedGraph<String, DefaultEdge> createDependencyGraph() {
+
+        SimpleDirectedGraph<String, DefaultEdge> d = new SimpleDirectedGraph(DefaultEdge.class);
+
+        for (String tactic: tactics.keySet()) {
+            d.addVertex(tactic);
+        }
+
+        d.addEdge("Collection", "Discovery");
+        d.addEdge("Exfiltration", "Collection");
+        d.addEdge("Execution", "Initial Access");
+        d.addEdge("Execution", "Lateral Movement");
+        d.addEdge("Privilege Escalation", "Lateral Movement");
+
+        return d;
 
     }
 
