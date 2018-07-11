@@ -165,6 +165,29 @@ class RankCalculator {
         }
     }
 
+    /**
+     * A getter for the stats list.
+     * @return stats The list of stats computed for the given file of attack vectors.
+     */
+    ArrayList<ArrayList<AttackStat>> getStats() {
+        return stats;
+    }
+
+    /**
+     * A getter for the highest ranked tactic of each attack vector.
+     * @return highestRankedTactics The list of highest ranked tactics.
+     */
+    ArrayList<AttackStat> getHighestRankedTactics() {
+
+        ArrayList<AttackStat> highestRankedTactics = new ArrayList<>();
+
+        for (ArrayList<AttackStat> attackStats: stats) {
+            highestRankedTactics.add(attackStats.get(0));
+        }
+
+        return highestRankedTactics;
+    }
+
 
     @Override
     public String toString() {

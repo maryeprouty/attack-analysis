@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
+import java.util.Set;
 
 public class AttackAnalysis {
 
@@ -75,6 +76,13 @@ public class AttackAnalysis {
             ranker.rankTactics(tacticsMap, attackList);
             String myStats = ranker.toString();
 
+            ArrayList<AttackStat> highestRankedTactics = ranker.getHighestRankedTactics();
+            for (AttackStat stat: highestRankedTactics) {
+                Set<String> cweSet = GraphNavigator.findCwes(stat.getTactic());
+                System.out.println(cweSet);
+            }
+
+
             try (PrintWriter out = new PrintWriter(ranker.rankSystem + ".txt")) {
                 out.println(myStats);
             } catch (FileNotFoundException e) {
@@ -84,8 +92,8 @@ public class AttackAnalysis {
 
         //Build association and dependency graphs to determine which CWEs are at risk given a certain
         //attack vector.
-        Graph<Vertex, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
-        SimpleDirectedGraph<Tactic, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
+        //Graph<Vertex, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
+        //SimpleDirectedGraph<Tactic, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
         //System.out.println(associationGraph.edgesOf(TacticGraphBuilder.p));
         //System.out.println(dependencyGraph.incomingEdgesOf(TacticGraphBuilder.ia));
 

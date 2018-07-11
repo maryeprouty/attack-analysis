@@ -32,6 +32,9 @@ class TacticGraphBuilder {
     private static Tactic ds = new Tactic("Discovery");
     private static Tactic cc = new Tactic("Command and Control");
 
+    static ArrayList<Tactic> tacticVertices = new ArrayList<>(Arrays.asList(ia, xc, lm, p,
+            pe, de, ca, xf, c, ds, cc));
+
     //The technical impacts from CWEs being mapped to the attack tactics above.
     private static TechnicalImpact unauth = new TechnicalImpact("Execute unauthorized code or commands",
             new ArrayList<>(Arrays.asList("78", "79", "98", "120", "129", "131", "134", "190",

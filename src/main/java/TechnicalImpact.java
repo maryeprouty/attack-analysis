@@ -11,6 +11,7 @@
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Set;
 
 class TechnicalImpact extends Vertex {
 
@@ -47,7 +48,7 @@ class TechnicalImpact extends Vertex {
 
     /**
      * This method converts the CWEs in the cweList to a readable string of CWEs.
-     * @return cweStr The string representation of CWEs related to this technical impact. 
+     * @return cweStr The string representation of CWEs related to this technical impact.
      */
     String cwesToString() {
         String cweStr = "CWEs: ";
@@ -62,6 +63,14 @@ class TechnicalImpact extends Vertex {
         }
 
         return cweStr;
+    }
+
+    /**
+     * A getter for the list of CWEs associated with this technical impact.
+     * @return cweList The list of CWEs that cause this technical impact.
+     */
+    ArrayList<String> getCwes() {
+        return cweList;
     }
 
 

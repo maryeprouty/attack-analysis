@@ -47,6 +47,14 @@ class AttackStat implements Comparable<AttackStat> {
     }
 
     /**
+     * A getter for the tactic associated with this AttackStat.
+     * @return tactic Returns the name of the tactic.
+     */
+    String getTactic() {
+        return tactic;
+    }
+
+    /**
     * A getter for the rankValue associated with this AttackStat.
     * @return double Returns the numerical rank value.
     */
