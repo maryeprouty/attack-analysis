@@ -1,14 +1,22 @@
-/**
- * Created by maryprouty on 7/10/18.
- */
+/*
+*
+* This class is a concrete implementation of a vertex to be used in graphs provided
+* by the JGraphT package. It represents one of the 8 technical impacts from CWEs, which
+* can be found at https://cwe.mitre.org/community/swa/detection_methods.html.
+*
+* @author Mary Prouty
+* @version 1.0
+* @since 2018-07-11
+*/
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 class TechnicalImpact extends Vertex {
 
     private ArrayList<String> cweList;
 
-    TechnicalImpact(String name) {
+    private TechnicalImpact(String name) {
         super(name);
     }
 
@@ -19,17 +27,29 @@ class TechnicalImpact extends Vertex {
 
     @Override
     public boolean equals(Object obj) {
-        return false;
+
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        TechnicalImpact other = (TechnicalImpact) obj;
+        return Objects.equals(name, other.name) && Objects.equals(cweList, other.cweList);
     }
 
     @Override
     public int hashCode() {
-        return 0;
+        return Objects.hash(name, cweList);
     }
 
-
-    @Override
-    public String toString() {
+    /**
+     * This method converts the CWEs in the cweList to a readable string of CWEs.
+     * @return cweStr The string representation of CWEs related to this technical impact. 
+     */
+    String cwesToString() {
         String cweStr = "CWEs: ";
 
         int i = 0;
@@ -42,6 +62,12 @@ class TechnicalImpact extends Vertex {
         }
 
         return cweStr;
+    }
+
+
+    @Override
+    public String toString() {
+        return name;
     }
 
 }

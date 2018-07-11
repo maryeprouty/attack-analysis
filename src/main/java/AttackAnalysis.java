@@ -10,7 +10,6 @@
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleDirectedGraph;
-import org.jgrapht.graph.SimpleGraph;
 
 import java.util.Map;
 import java.util.ArrayList;
@@ -83,12 +82,12 @@ public class AttackAnalysis {
             }
         }
 
-        TacticGraphBuilder.setTactics(tacticsMap);
-        Graph<String, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
-        SimpleDirectedGraph<String, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
-
-        System.out.println(associationGraph.edgesOf("Persistence"));
-        System.out.println(dependencyGraph.incomingEdgesOf("Initial Access"));
+        //Build association and dependency graphs to determine which CWEs are at risk given a certain
+        //attack vector.
+        Graph<Vertex, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
+        SimpleDirectedGraph<Tactic, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
+        //System.out.println(associationGraph.edgesOf(TacticGraphBuilder.p));
+        //System.out.println(dependencyGraph.incomingEdgesOf(TacticGraphBuilder.ia));
 
 
     }

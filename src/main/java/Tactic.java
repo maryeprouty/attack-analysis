@@ -1,6 +1,15 @@
-/**
- * Created by maryprouty on 7/10/18.
- */
+/*
+*
+* This class is a concrete implementation of a vertex to be used in graphs provided
+* by the JGraphT package. It represents one of the 11 attack tactics from attack.mitre.org.
+*
+* @author Mary Prouty
+* @version 1.0
+* @since 2018-07-11
+*/
+
+import java.util.Objects;
+
 class Tactic extends Vertex {
 
     Tactic(String name) {
@@ -9,15 +18,27 @@ class Tactic extends Vertex {
 
     @Override
     public boolean equals(Object obj) {
-        return false;
+
+        if (obj == this) {
+            return true;
+        }
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Tactic other = (Tactic) obj;
+        return Objects.equals(name, other.name);
+
     }
 
     @Override
     public int hashCode() {
-        return 0;
+        return Objects.hash(name);
     }
 
-    String getName() {
+    @Override
+    public String toString() {
         return name;
     }
 }
