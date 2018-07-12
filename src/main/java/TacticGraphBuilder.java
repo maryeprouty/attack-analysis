@@ -134,6 +134,11 @@ class TacticGraphBuilder {
         d.addEdge(xc, lm);
         d.addEdge(pe, lm);
 
+//        d.addEdge(lm, ia);
+//        d.addEdge(ca, pe);
+//        d.addEdge(de, pe);
+//        d.addEdge(cc, pe);
+
         return d;
 
     }

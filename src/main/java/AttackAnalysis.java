@@ -80,6 +80,8 @@ public class AttackAnalysis {
             for (AttackStat stat: highestRankedTactics) {
                 Set<String> cweSet = GraphNavigator.findCwes(stat.getTactic());
                 System.out.println(cweSet);
+                Set<String> dependentTactics = GraphNavigator.findDependentTactics(stat.getTactic());
+                System.out.println(dependentTactics);
             }
 
 
