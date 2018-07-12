@@ -79,16 +79,9 @@ public class AttackAnalysis {
 
             ArrayList<AttackStat> highestRankedTactics = ranker.getHighestRankedTactics();
             for (AttackStat stat: highestRankedTactics) {
-                Set<String> cweSet = GraphNavigator.findCwes(stat.getTactic());
-                System.out.println(cweSet);
-                Set<String> dependentTactics = GraphNavigator.findDependentTactics(stat.getTactic());
-                Set<String> cwesFromDependencies = new TreeSet<>();
-                for (String dependentTactic: dependentTactics) {
-                    cwesFromDependencies.addAll(GraphNavigator.findCwes(dependentTactic));
-                }
-                System.out.println(cwesFromDependencies);
+                GraphNavigator g = new GraphNavigator(stat.getTactic());
+                System.out.println(g.toString());
             }
-
 
             try (PrintWriter out = new PrintWriter(ranker.rankSystem + ".txt")) {
                 out.println(myStats);
@@ -96,13 +89,6 @@ public class AttackAnalysis {
                 System.err.println("File not found");
             }
         }
-
-        //Build association and dependency graphs to determine which CWEs are at risk given a certain
-        //attack vector.
-        //Graph<Vertex, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
-        //SimpleDirectedGraph<Tactic, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
-        //System.out.println(associationGraph.edgesOf(TacticGraphBuilder.p));
-        //System.out.println(dependencyGraph.incomingEdgesOf(TacticGraphBuilder.ia));
 
 
     }

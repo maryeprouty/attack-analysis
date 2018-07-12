@@ -21,13 +21,26 @@ class GraphNavigator {
     private static Graph<Vertex, DefaultEdge> associationGraph = TacticGraphBuilder.createAssociationGraph();
     private static SimpleDirectedGraph<Tactic, DefaultEdge> dependencyGraph = TacticGraphBuilder.createDependencyGraph();
 
+    private Tactic thisTactic;
+    private Set<String> cweSet;
+    private Set<String> cwesFromDependencies;
+
+    /**
+     * Constructor that converts tactic string to a Tactic object and finds CWEs associated with the tactic.
+     * @param tacticStr A string representation of a tactic.
+     */
+    GraphNavigator(String tacticStr) {
+        this.thisTactic = stringToTactic(tacticStr);
+        this.cweSet = findCwes(thisTactic);
+        this.cwesFromDependencies = findCwesFromDependencies();
+    }
 
     /**
      * Converts a String representation of a tactic to a Tactic object.
      * @param tacticStr The string representing the tactic.
      * @return The Tactic object associated with the tactic string.
      */
-    private static Tactic stringToTactic(String tacticStr) {
+    private Tactic stringToTactic(String tacticStr) {
 
         for (Tactic v: TacticGraphBuilder.tacticVertices) {
             if (v.toString().equals(tacticStr)) {
@@ -42,15 +55,12 @@ class GraphNavigator {
     /**
      * This method finds the CWEs associated with a tactic by looking at which Technical Impacts
      * it's mapped to in the association graph.
-     * @param tacticStr The String representing the tactic.
+     * @param myTactic The tactic associated with the CWEs.
      * @return cweSet The set of CWEs associated with this tactic.
      */
-    static Set<String> findCwes(String tacticStr) {
+    private Set<String> findCwes(Tactic myTactic) {
 
-        Set<String> cweSet = new TreeSet<>();
-
-        //Using the tactic string, find the vertex representing this tactic in the association graph.
-        Tactic myTactic = stringToTactic(tacticStr);
+        Set<String> myCweSet = new TreeSet<>();
 
         //Add the CWEs from each connected Technical Impact to the CWE set.
         if (myTactic != null) {
@@ -58,40 +68,56 @@ class GraphNavigator {
             for (DefaultEdge edge: edges) {
                 if (associationGraph.getEdgeTarget(edge) instanceof TechnicalImpact) {
                     TechnicalImpact impact = (TechnicalImpact) associationGraph.getEdgeTarget(edge);
-                    cweSet.addAll(impact.getCwes());
+                    myCweSet.addAll(impact.getCwes());
                 }
             }
         }
 
-        return cweSet;
+        return myCweSet;
     }
 
     /**
      * This method uses the dependency graph to determine which tactics are dependent on the
      * input tactic by recursively adding tactics to the dependentTactics set.
-     * @param tacticStr The String representing the tactic.
+     * @param myTactic The tactic being depended on.
      * @return dependentTactics The set of tactics that are dependent on the input tactic.
      */
-    static Set<String> findDependentTactics(String tacticStr) {
+    private Set<String> findDependentTactics(Tactic myTactic) {
 
         Set<String> dependentTactics = new TreeSet<>();
-
-        //Using the tactic string, find the vertex representing this tactic in the dependency graph.
-        Tactic myTactic = stringToTactic(tacticStr);
 
         //Recursively add tactics to the dependentTactics set.
         if (myTactic != null) {
             Set<DefaultEdge> edges = dependencyGraph.incomingEdgesOf(myTactic);
             for (DefaultEdge edge: edges) {
-                String dependentTactic = dependencyGraph.getEdgeSource(edge).toString();
-                dependentTactics.add(dependentTactic);
+                Tactic dependentTactic = dependencyGraph.getEdgeSource(edge);
+                dependentTactics.add(dependentTactic.toString());
                 dependentTactics.addAll(findDependentTactics(dependentTactic));
             }
-            
+
         }
 
         return dependentTactics;
 
+    }
+
+    /**
+     * This method finds CWEs associated with tactics that are dependent on the main tactic.
+     * @return A set of strings representing the dependent tactics.
+     */
+    private Set<String> findCwesFromDependencies() {
+        Set<String> cwesFromDependencies = new TreeSet<>();
+        Set<String> dependentTactics = findDependentTactics(thisTactic);
+        for (String dependentTacticStr: dependentTactics) {
+            Tactic dependentTactic = stringToTactic(dependentTacticStr);
+            cwesFromDependencies.addAll(findCwes(dependentTactic));
+        }
+        return cwesFromDependencies;
+    }
+
+    @Override
+    public String toString() {
+        return thisTactic.toString() + ", " + cweSet + ", " + cwesFromDependencies;
     }
 
 }
