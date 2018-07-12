@@ -7,15 +7,16 @@
 * @since 2018-06-25
 */
 
-import org.jgrapht.Graph;
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.SimpleDirectedGraph;
+//import org.jgrapht.Graph;
+//import org.jgrapht.graph.DefaultEdge;
+//import org.jgrapht.graph.SimpleDirectedGraph;
 
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class AttackAnalysis {
 
@@ -81,7 +82,11 @@ public class AttackAnalysis {
                 Set<String> cweSet = GraphNavigator.findCwes(stat.getTactic());
                 System.out.println(cweSet);
                 Set<String> dependentTactics = GraphNavigator.findDependentTactics(stat.getTactic());
-                System.out.println(dependentTactics);
+                Set<String> cwesFromDependencies = new TreeSet<>();
+                for (String dependentTactic: dependentTactics) {
+                    cwesFromDependencies.addAll(GraphNavigator.findCwes(dependentTactic));
+                }
+                System.out.println(cwesFromDependencies);
             }
 
 

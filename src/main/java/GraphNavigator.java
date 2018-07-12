@@ -61,10 +61,9 @@ class GraphNavigator {
                     cweSet.addAll(impact.getCwes());
                 }
             }
-            return cweSet;
         }
 
-        return null;
+        return cweSet;
     }
 
     /**
@@ -88,11 +87,10 @@ class GraphNavigator {
                 dependentTactics.add(dependentTactic);
                 dependentTactics.addAll(findDependentTactics(dependentTactic));
             }
-
-            return dependentTactics;
+            
         }
 
-        return null;
+        return dependentTactics;
 
     }
 
