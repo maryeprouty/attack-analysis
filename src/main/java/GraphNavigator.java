@@ -103,7 +103,7 @@ class GraphNavigator {
 
     /**
      * This method finds CWEs associated with tactics that are dependent on the main tactic.
-     * @return A set of strings representing the dependent tactics.
+     * @return The set of CWEs at risk through dependencies.
      */
     private Set<String> findCwesFromDependencies() {
         Set<String> cwesFromDependencies = new TreeSet<>();
@@ -117,7 +117,42 @@ class GraphNavigator {
 
     @Override
     public String toString() {
-        return thisTactic.toString() + ", " + cweSet + ", " + cwesFromDependencies;
+        String cweStr = thisTactic.toString() + ":\n\tdirectly associated with ";
+        if (!cweSet.isEmpty()) {
+            cweStr += "CWEs ";
+        } else {
+            cweStr += "no CWEs;\n";
+        }
+
+        int i = 0;
+        for (String cwe: cweSet) {
+            cweStr += cwe;
+            if (i != cweSet.size() - 1) {
+                cweStr += ", ";
+            } else {
+                cweStr += ";\n";
+            }
+            i++;
+        }
+
+        if (!cwesFromDependencies.isEmpty()) {
+            cweStr += "\tdependently associated with CWEs ";
+        } else {
+            cweStr += "\tno CWEs from dependencies.";
+        }
+
+        int j = 0;
+        for (String dcwe: cwesFromDependencies) {
+            cweStr += dcwe;
+            if (j != cwesFromDependencies.size() - 1) {
+                cweStr += ", ";
+            } else {
+                cweStr += ".";
+            }
+            j++;
+        }
+
+        return cweStr;
     }
 
 }
