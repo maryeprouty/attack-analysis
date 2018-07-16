@@ -7,16 +7,12 @@
 * @since 2018-06-25
 */
 
-//import org.jgrapht.Graph;
-//import org.jgrapht.graph.DefaultEdge;
-//import org.jgrapht.graph.SimpleDirectedGraph;
 
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
-import java.util.Set;
-import java.util.TreeSet;
+
 
 public class AttackAnalysis {
 
@@ -29,8 +25,11 @@ public class AttackAnalysis {
     * attack uses out of those in a given tactic. The two files should be supplied by the
     * user when running the program with the tactics file first followed by the attack file,
     * and the third argument should be one of three ranking systems: jsi, weighted,
-    * techniques, or all. Without the third argument, the default is jsi. The output is written
-    * to a text file with the name of the ranking system.
+    * techniques, or all. Without the third argument, the default is jsi. The ranking is written
+    * to a text file with the name of the ranking system. Furthermore, the program uses the
+     * highest ranked tactic for each attack to traverse a dependency graph and association
+     * graph in order to find which CWEs are associated with it. These CWEs are outputted
+     * to another file.
     * ie. java AttackAnalysis tactics.csv attackvectors.csv weighted
     * @param args args[0] is the tactics file, args[1] is the attack file, and args[2]
     * is the optional ranking method.
@@ -68,7 +67,7 @@ public class AttackAnalysis {
         ArrayList<ArrayList<String>> attackList = DataInterpreter.dataFileToList(args[1]);
 
         //Using the specified ranking system(s), rank the tactics for each attack
-        //in the attackList.
+        //in the attackList and find the CWEs associated with the highest ranked tactics.
         for (RankCalculator ranker: rankers) {
 
             //Compare tactics and attack vectors to distinguish which tactic each
