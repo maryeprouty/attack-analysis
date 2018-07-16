@@ -138,7 +138,7 @@ class GraphNavigator {
         if (!cwesFromDependencies.isEmpty()) {
             cweStr += "\tdependently associated with CWEs ";
         } else {
-            cweStr += "\tno CWEs from dependencies.";
+            cweStr += "\tno CWEs from dependencies.\n";
         }
 
         int j = 0;
@@ -147,7 +147,7 @@ class GraphNavigator {
             if (j != cwesFromDependencies.size() - 1) {
                 cweStr += ", ";
             } else {
-                cweStr += ".";
+                cweStr += ".\n";
             }
             j++;
         }

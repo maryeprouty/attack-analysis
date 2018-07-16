@@ -77,17 +77,30 @@ public class AttackAnalysis {
             ranker.rankTactics(tacticsMap, attackList);
             String myStats = ranker.toString();
 
-            ArrayList<AttackStat> highestRankedTactics = ranker.getHighestRankedTactics();
-            for (AttackStat stat: highestRankedTactics) {
-                GraphNavigator g = new GraphNavigator(stat.getTactic());
-                System.out.println(g.toString());
-            }
-
             try (PrintWriter out = new PrintWriter(ranker.rankSystem + ".txt")) {
                 out.println(myStats);
             } catch (FileNotFoundException e) {
                 System.err.println("File not found");
             }
+
+            //Use the highest ranked tactic for each attack vector to determine
+            //which CWEs are the highest priority for remediation and write the
+            //results to file depending on ranking method.
+            ArrayList<AttackStat> highestRankedTactics = ranker.getHighestRankedTactics();
+            String tacticCWEs = "";
+            int index = 0;
+            for (AttackStat stat: highestRankedTactics) {
+                GraphNavigator g = new GraphNavigator(stat.getTactic());
+                tacticCWEs += "Attack " + index + " - " + g.toString();
+                index++;
+            }
+
+            try (PrintWriter o = new PrintWriter("cwe_" + ranker.rankSystem + ".txt")) {
+                o.println(tacticCWEs);
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found");
+            }
+
         }
 
 
