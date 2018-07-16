@@ -87,7 +87,7 @@ public class AttackAnalysis {
             //results to file depending on ranking method.
             ArrayList<AttackStat> highestRankedTactics = ranker.getHighestRankedTactics();
             String tacticCWEs = "";
-            int index = 0;
+            int index = 1;
             for (AttackStat stat: highestRankedTactics) {
                 GraphNavigator g = new GraphNavigator(stat.getTactic());
                 tacticCWEs += "Attack " + index + " - " + g.toString();
