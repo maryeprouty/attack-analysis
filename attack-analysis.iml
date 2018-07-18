@@ -12,5 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.jgrapht:jgrapht-core:1.0.1" level="project" />
+    <orderEntry type="library" name="com.github.vlsi.mxgraph:jgraphx:3.9.8" level="project" />
+    <orderEntry type="library" name="com.io7m.jgrapht:jgrapht-ext:1.2.1-MODULARIZED" level="project" />
   </component>
 </module>

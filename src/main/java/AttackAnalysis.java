@@ -8,10 +8,13 @@
 */
 
 
+import java.awt.*;
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
+
+import javax.swing.JFrame;
 
 
 public class AttackAnalysis {
@@ -102,6 +105,24 @@ public class AttackAnalysis {
 
         }
 
+        GraphVisualizer gv = new GraphVisualizer();
+        gv.init();
+
+        JFrame frame = new JFrame();
+        frame.setTitle("Attack Analysis Graphs");
+        //frame.setLayout(new GridBagLayout());
+        frame.setResizable(false);
+        //frame.setLayout(new FlowLayout());
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+
+        frame.getContentPane().add(gv);
+        frame.setLocationRelativeTo(null);
+        frame.pack();
+        //frame.setSize(1400, 175);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
 
     }
 
