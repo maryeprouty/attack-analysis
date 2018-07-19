@@ -8,13 +8,19 @@
 */
 
 
+import com.sun.xml.internal.ws.api.*;
+
 import java.awt.*;
+import java.awt.Component;
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
 import javax.swing.JFrame;
+import java.io.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 
 
 public class AttackAnalysis {
@@ -105,14 +111,13 @@ public class AttackAnalysis {
 
         }
 
+        //Use the GraphVisualizer to show the dependency and association graphs
         GraphVisualizer gv = new GraphVisualizer();
         gv.init();
 
         JFrame frame = new JFrame();
         frame.setTitle("Attack Analysis Graphs");
-        //frame.setLayout(new GridBagLayout());
         frame.setResizable(false);
-        //frame.setLayout(new FlowLayout());
 
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -120,9 +125,23 @@ public class AttackAnalysis {
         frame.getContentPane().add(gv);
         frame.setLocationRelativeTo(null);
         frame.pack();
-        //frame.setSize(1400, 175);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
+        //Save the Swing JFrame to graphs.png for future reference
+        BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(),
+        BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = image.createGraphics();
+        for (Component comp: frame.getContentPane().getComponents()) {
+            comp.paint(g);
+        }
+        g.dispose();
+
+        try{
+            ImageIO.write(image, "png", new File("graphs.png"));
+        }catch(IOException e){
+            System.err.println(e.toString());
+        }
 
     }
 
