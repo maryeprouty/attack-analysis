@@ -43,9 +43,9 @@ class GraphVisualizer extends JApplet {
     public void init() {
 
         //Convert JGraphT graphs to JGraphX graphs for visualization
-        JGraphXAdapter<Vertex, DefaultEdge> dependencyAdapter = new
-                JGraphXAdapter(TacticGraphBuilder.createDependencyGraph());
-        JGraphXAdapter<Vertex, DefaultEdge> associationAdapter = new
+        JGraphXAdapter<? extends Vertex, DefaultEdge> dependencyAdapter = new
+                JGraphXAdapter<>(TacticGraphBuilder.createDependencyGraph());
+        JGraphXAdapter<? extends Vertex, DefaultEdge> associationAdapter = new
                 JGraphXAdapter<>(TacticGraphBuilder.createAssociationGraph());
 
         //Initialize Swing components to add to UI
@@ -85,7 +85,7 @@ class GraphVisualizer extends JApplet {
      * @param graph The JGraphXAdapter created from the dependency or association JGrapht graph.
      * @return The Swing component illustrating the graph.
      */
-    private mxGraphComponent initComponent(JGraphXAdapter<Vertex, DefaultEdge> graph) {
+    private mxGraphComponent initComponent(JGraphXAdapter<? extends Vertex, DefaultEdge> graph) {
 
         ArrayList<String> impacts = new ArrayList<>(Arrays.asList("Execute unauthorized code or commands",
                 "Gain privileges/assume identity", "Read data", "Modify data", "DoS: unreliable execution",
