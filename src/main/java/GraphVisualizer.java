@@ -16,6 +16,7 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.view.mxGraphView;
 import com.mxgraph.view.mxStylesheet;
 import com.mxgraph.util.mxPoint;
+import com.mxgraph.util.mxHtmlColor;
 
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.ext.JGraphXAdapter;
@@ -25,16 +26,18 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Container;
-import java.awt.Insets;
+import java.awt.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 class GraphVisualizer extends JApplet {
+
+    private Color lightblue = new Color(220, 235, 255);
+    private Color beige = new Color(250, 250, 245);
+    private Color darkbeige = new Color(240, 240, 230);
+
 
     @Override
     public void init() {
@@ -52,19 +55,25 @@ class GraphVisualizer extends JApplet {
         //Format components in a GridBagLayout to illustrate graphs side by side
         Container pane = getContentPane();
         JPanel mainPanel = new JPanel();
+        mainPanel.setBackground(darkbeige);
         pane.add(mainPanel);
         JPanel panel = new JPanel(new GridBagLayout());
+        panel.setBackground(darkbeige);
         mainPanel.add(panel);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         c.insets = new Insets(5, 20, 5, 20);
-        panel.add(new JLabel("Tactics to Technical Impacts"), c);
+        JLabel mapLabel = new JLabel("Tactics to Technical Impacts");
+        mapLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+        panel.add(mapLabel, c);
         c.gridy++;
         panel.add(associationComponent, c);
         c.gridx++;
         c.gridy--;
-        panel.add(new JLabel("Tactic Dependencies"), c);
+        JLabel depLabel = new JLabel("Tactic Dependencies");
+        depLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+        panel.add(depLabel, c);
         c.gridy++;
         panel.add(dependencyComponent, c);
 
@@ -112,7 +121,7 @@ class GraphVisualizer extends JApplet {
         style.getDefaultVertexStyle().put(mxConstants.STYLE_FONTCOLOR, "black");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_FONTFAMILY, "Times New Roman");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-        style.getDefaultVertexStyle().put(mxConstants.STYLE_FILLCOLOR, "pink");
+        style.getDefaultVertexStyle().put(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(lightblue));
         style.getDefaultVertexStyle().put(mxConstants.STYLE_STROKECOLOR, "black");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_LABEL_POSITION, mxConstants.ALIGN_CENTER);
 
@@ -125,6 +134,7 @@ class GraphVisualizer extends JApplet {
             geo.setHeight(30);
             if (impacts.contains(cell.getValue().toString())) {
                 geo.setWidth(225);
+                //cell.setStyle("yellow");
             } else {
                 geo.setWidth(125);
             }
@@ -134,6 +144,8 @@ class GraphVisualizer extends JApplet {
         graph.setBorder(40);
         mxGraphView view = graph.getView();
         view.setTranslate(new mxPoint(25, 25));
+
+        component.getViewport().setBackground(beige);
 
         return component;
     }
