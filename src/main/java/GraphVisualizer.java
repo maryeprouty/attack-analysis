@@ -34,10 +34,10 @@ import java.util.Arrays;
 
 class GraphVisualizer extends JApplet {
 
-    private Color lightblue = new Color(220, 235, 255);
+    private Color powderblue = new Color(185, 230, 236);
+    private Color darkpowder = new Color(140, 200, 206);
     private Color beige = new Color(250, 250, 245);
-    private Color darkbeige = new Color(240, 240, 230);
-
+    private Color darkbeige = new Color(230, 230, 220);
 
     @Override
     public void init() {
@@ -77,18 +77,7 @@ class GraphVisualizer extends JApplet {
         c.gridy++;
         panel.add(dependencyComponent, c);
 
-        //Format the layout of each graph to be hierarchical with a west orientation
-        mxHierarchicalLayout dependencyLayout = new mxHierarchicalLayout(dependencyAdapter);
-        dependencyLayout.setOrientation(SwingConstants.WEST);
-        dependencyLayout.setIntraCellSpacing(20);
-        dependencyLayout.setInterHierarchySpacing(30);
-        dependencyLayout.execute(dependencyAdapter.getDefaultParent());
 
-        mxHierarchicalLayout associationLayout = new mxHierarchicalLayout(associationAdapter);
-        associationLayout.setOrientation(SwingConstants.WEST);
-        associationLayout.setIntraCellSpacing(20);
-        associationLayout.setInterHierarchySpacing(30);
-        associationLayout.execute(associationAdapter.getDefaultParent());
     }
 
     /**
@@ -104,6 +93,7 @@ class GraphVisualizer extends JApplet {
 
         mxGraphComponent component = new mxGraphComponent(graph);
         component.setConnectable(false);
+        component.getViewport().setBackground(beige);
 
         //Disable the user from editing the graphs
         graph.setAllowDanglingEdges(false);
@@ -121,12 +111,14 @@ class GraphVisualizer extends JApplet {
         style.getDefaultVertexStyle().put(mxConstants.STYLE_FONTCOLOR, "black");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_FONTFAMILY, "Times New Roman");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_SHAPE, mxConstants.SHAPE_ELLIPSE);
-        style.getDefaultVertexStyle().put(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(lightblue));
+        style.getDefaultVertexStyle().put(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(darkpowder));
         style.getDefaultVertexStyle().put(mxConstants.STYLE_STROKECOLOR, "black");
         style.getDefaultVertexStyle().put(mxConstants.STYLE_LABEL_POSITION, mxConstants.ALIGN_CENTER);
 
-        //Change size of vertices to fully encase label
+        //Change size of vertices to fully encase label and determine which cells are Technical Impacts
         Object[] cells = graph.getChildVertices(graph.getDefaultParent());
+        Object[] impactCells = new Object[8];
+        int i = 0;
         for (Object c: cells) {
             mxCell cell = (mxCell) c;
             mxGeometry geo = cell.getGeometry();
@@ -134,18 +126,26 @@ class GraphVisualizer extends JApplet {
             geo.setHeight(30);
             if (impacts.contains(cell.getValue().toString())) {
                 geo.setWidth(225);
-                //cell.setStyle("yellow");
+                impactCells[i++] = c;
             } else {
                 geo.setWidth(125);
             }
         }
+
+        //Set the color of Technical Impacts to be darker blue
+        graph.setCellStyles(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(powderblue), impactCells);
 
         //Center the graph within a larger border
         graph.setBorder(40);
         mxGraphView view = graph.getView();
         view.setTranslate(new mxPoint(25, 25));
 
-        component.getViewport().setBackground(beige);
+        //Format the layout of each graph to be hierarchical with a west orientation
+        mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
+        layout.setOrientation(SwingConstants.WEST);
+        layout.setIntraCellSpacing(20);
+        layout.setInterHierarchySpacing(30);
+        layout.execute(graph.getDefaultParent());
 
         return component;
     }
