@@ -11,22 +11,28 @@
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
+
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.ext.JGraphXAdapter;
-import org.jgrapht.graph.SimpleDirectedGraph;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JApplet;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Container;
+import java.awt.Insets;
 
 class GraphVisualizer extends JApplet {
 
-    private JGraphXAdapter<Vertex, DefaultEdge> dependencyAdapter;
-    private JGraphXAdapter<Vertex, DefaultEdge> associationAdapter;
-
     @Override
     public void init() {
-        dependencyAdapter = new JGraphXAdapter(TacticGraphBuilder.createDependencyGraph());
-        associationAdapter = new JGraphXAdapter<>(TacticGraphBuilder.createAssociationGraph());
+        JGraphXAdapter<Vertex, DefaultEdge> dependencyAdapter = new
+                JGraphXAdapter(TacticGraphBuilder.createDependencyGraph());
+        JGraphXAdapter<Vertex, DefaultEdge> associationAdapter = new
+                JGraphXAdapter<>(TacticGraphBuilder.createAssociationGraph());
 
         mxGraphComponent dependencyComponent = initComponent(dependencyAdapter);
         mxGraphComponent associationComponent = initComponent(associationAdapter);
