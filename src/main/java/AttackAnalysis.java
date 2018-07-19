@@ -8,8 +8,6 @@
 */
 
 
-import com.sun.xml.internal.ws.api.*;
-
 import java.awt.*;
 import java.awt.Component;
 import java.util.Map;
@@ -18,7 +16,8 @@ import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
 import javax.swing.JFrame;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 

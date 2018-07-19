@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2397e1-846e-41f7-9ba6-52893a41121a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttackAnalysis.class" afterPath="$PROJECT_DIR$/target/classes/AttackAnalysis.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" afterPath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
     </list>
     <ignored path="attack-analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,27 +26,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AttackAnalysis.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AttackAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AttackAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
+            <state relative-caret-position="300">
+              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
-                <element signature="e#0#5891#0" expanded="true" />
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#5883#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphVisualizer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GraphVisualizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/GraphVisualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            <state relative-caret-position="149">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding>
-                <element signature="e#0#6034#0" expanded="true" />
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#6178#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +108,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Tactic.java" />
         <option value="$PROJECT_DIR$/src/main/java/GraphNavigator.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
       </list>
     </option>
   </component>
@@ -725,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532035818321</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Improving graphs.png quality">
+      <created>1532039073759</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1532039073759</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -773,7 +778,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Fixing warnings" />
     <MESSAGE value="Playing with weights" />
     <MESSAGE value="Unused imports" />
@@ -798,7 +802,8 @@
     <MESSAGE value="Adding color to background" />
     <MESSAGE value="Making code more reusable" />
     <MESSAGE value="Fixing generics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing generics" />
+    <MESSAGE value="Improving graphs.png quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improving graphs.png quality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -862,8 +867,7 @@
         <state relative-caret-position="30">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#0#5891#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#5883#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -919,8 +923,7 @@
         <state relative-caret-position="30">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#0#5891#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#5883#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1176,17 +1179,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GraphVisualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#6034#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphs.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1199,11 +1191,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AttackAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
+        <state relative-caret-position="300">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <element signature="e#0#5891#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#5883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GraphVisualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#6178#0" expanded="true" />
           </folding>
         </state>
       </provider>

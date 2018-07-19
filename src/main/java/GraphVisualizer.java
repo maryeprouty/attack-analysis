@@ -26,7 +26,12 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Font;
 
 import java.util.ArrayList;
 import java.util.Arrays;
