@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2397e1-846e-41f7-9ba6-52893a41121a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphs.png" afterPath="$PROJECT_DIR$/graphs.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" afterPath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
     </list>
     <ignored path="attack-analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -742,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532464709897</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Color coding graphs">
+      <created>1532470400700</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1532470400700</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -790,7 +795,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="APTs and rationale" />
     <MESSAGE value="APTs" />
     <MESSAGE value="JGraphT dependency" />
     <MESSAGE value="Graph Builder" />
@@ -815,7 +819,8 @@
     <MESSAGE value="Expanding imports" />
     <MESSAGE value="Adding graphs.png" />
     <MESSAGE value="Better quality graphs.png" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better quality graphs.png" />
+    <MESSAGE value="Color coding graphs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color coding graphs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
