@@ -26,6 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridBagLayout;
@@ -65,6 +66,7 @@ class GraphVisualizer extends JApplet {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(darkbeige);
         mainPanel.add(panel);
+
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
@@ -82,11 +84,36 @@ class GraphVisualizer extends JApplet {
         c.gridy++;
         panel.add(dependencyComponent, c);
 
+        //Illustrate the color coding system and give references to mitre 
+        JPanel colorCode = new JPanel(new GridBagLayout());
+        colorCode.setBackground(Color.white);
+        GridBagConstraints cc = new GridBagConstraints();
+        cc.gridx = 0;
+        cc.gridy = 0;
+        cc.insets = new Insets(5, 5, 5, 5);
+        JLabel atLabel = new JLabel("Attack Tactic");
+        Font atFont = new Font("Times New Roman", Font.BOLD, 14);
+        atLabel.setFont(atFont);
+        atLabel.setForeground(darkpowder);
+        colorCode.add(atLabel, cc);
+        cc.gridy++;
+        JLabel tiLabel = new JLabel("Technical Impact");
+        tiLabel.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        tiLabel.setForeground(powderblue);
+        colorCode.add(tiLabel, cc);
+        cc.gridx++;
+        colorCode.add(new JLabel("https://cwe.mitre.org/community/swa/detection_methods.html"), cc);
+        cc.gridy--;
+        colorCode.add(new JLabel("https://attack.mitre.org/wiki/Main_Page"), cc);
+        c.gridy++;
+        panel.add(colorCode, c);
+
 
     }
 
     /**
      * Creates a component from a JGraphXAdapter and sets its graph's properties.
+     *
      * @param graph The JGraphXAdapter created from the dependency or association JGrapht graph.
      * @return The Swing component illustrating the graph.
      */
@@ -124,7 +151,7 @@ class GraphVisualizer extends JApplet {
         Object[] cells = graph.getChildVertices(graph.getDefaultParent());
         Object[] impactCells = new Object[8];
         int i = 0;
-        for (Object c: cells) {
+        for (Object c : cells) {
             mxCell cell = (mxCell) c;
             mxGeometry geo = cell.getGeometry();
 
@@ -154,5 +181,17 @@ class GraphVisualizer extends JApplet {
 
         return component;
     }
+
+//    private static class RectDraw extends JPanel {
+//
+//        public void paintComponent(Graphics g) {
+//            super.paintComponent(g);
+//            g.drawRect(230, 80, 10, 10);
+//            g.setColor(Color.RED);
+//            g.fillRect(230, 80, 10, 10);
+//        }
+//
+//
+//    }
 
 }
