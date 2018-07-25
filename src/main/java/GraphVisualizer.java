@@ -25,17 +25,16 @@ import javax.swing.JApplet;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JOptionPane;
 
-import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 
 class GraphVisualizer extends JApplet {
@@ -84,7 +83,7 @@ class GraphVisualizer extends JApplet {
         c.gridy++;
         panel.add(dependencyComponent, c);
 
-        //Illustrate the color coding system and give references to mitre 
+        //Illustrate the color coding system and give references to mitre
         JPanel colorCode = new JPanel(new GridBagLayout());
         colorCode.setBackground(Color.white);
         GridBagConstraints cc = new GridBagConstraints();
@@ -119,11 +118,7 @@ class GraphVisualizer extends JApplet {
      */
     private mxGraphComponent initComponent(JGraphXAdapter<? extends Vertex, DefaultEdge> graph) {
 
-        ArrayList<String> impacts = new ArrayList<>(Arrays.asList("Execute unauthorized code or commands",
-                "Gain privileges/assume identity", "Read data", "Modify data", "DoS: unreliable execution",
-                "DoS: resource consumption", "Bypass protection mechanism", "Hide activities"));
-
-        mxGraphComponent component = new mxGraphComponent(graph);
+        final mxGraphComponent component = new mxGraphComponent(graph);
         component.setConnectable(false);
         component.getViewport().setBackground(beige);
 
@@ -149,23 +144,44 @@ class GraphVisualizer extends JApplet {
 
         //Change size of vertices to fully encase label and determine which cells are Technical Impacts
         Object[] cells = graph.getChildVertices(graph.getDefaultParent());
-        Object[] impactCells = new Object[8];
+        final Object[] impactCells = new Object[8];
         int i = 0;
         for (Object c : cells) {
             mxCell cell = (mxCell) c;
             mxGeometry geo = cell.getGeometry();
 
             geo.setHeight(30);
-            if (impacts.contains(cell.getValue().toString())) {
-                geo.setWidth(225);
-                impactCells[i++] = c;
-            } else {
+            boolean found = false;
+            for (TechnicalImpact impact: TacticGraphBuilder.impactVertices) {
+                if (impact.toString().equals(cell.getValue().toString())) {
+                    geo.setWidth(225);
+                    impactCells[i++] = c;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
                 geo.setWidth(125);
             }
         }
 
-        //Set the color of Technical Impacts to be darker blue
+        //Set the color of Technical Impacts to be darker blue and add MouseListener to each impact
         graph.setCellStyles(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(powderblue), impactCells);
+
+        component.getGraphControl().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                mxCell cell =(mxCell) component.getCellAt(e.getX(), e.getY());
+                if (cell != null) {
+                    for (TechnicalImpact impact: TacticGraphBuilder.impactVertices) {
+                        if (impact.toString().equals(cell.getValue().toString())) {
+                            JOptionPane.showMessageDialog(component, impact.cwesToString());
+                            break;
+                        }
+                    }
+                }
+            }
+        });
 
         //Center the graph within a larger border
         graph.setBorder(40);
@@ -182,16 +198,5 @@ class GraphVisualizer extends JApplet {
         return component;
     }
 
-//    private static class RectDraw extends JPanel {
-//
-//        public void paintComponent(Graphics g) {
-//            super.paintComponent(g);
-//            g.drawRect(230, 80, 10, 10);
-//            g.setColor(Color.RED);
-//            g.fillRect(230, 80, 10, 10);
-//        }
-//
-//
-//    }
 
 }

@@ -55,6 +55,9 @@ class TacticGraphBuilder {
     private static TechnicalImpact hide = new TechnicalImpact("Hide activities", new ArrayList<>(
            Collections.singletonList("78")));
 
+    static ArrayList<TechnicalImpact> impactVertices = new ArrayList<>(Arrays.asList(unauth, gain,
+            read, modify, dosEx, dosRsrc, bypass, hide));
+
 
     /**
      * This method creates the association graph, mapping attack tactics to technical

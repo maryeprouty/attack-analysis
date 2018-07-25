@@ -51,7 +51,7 @@ class TechnicalImpact extends Vertex {
      * @return cweStr The string representation of CWEs related to this technical impact.
      */
     String cwesToString() {
-        String cweStr = "CWEs: ";
+        String cweStr = "'"+ this.toString() + "' is caused by \nCWEs ";
 
         int i = 0;
         for (String cwe: cweList) {
@@ -61,6 +61,7 @@ class TechnicalImpact extends Vertex {
             }
             i++;
         }
+        cweStr += ".";
 
         return cweStr;
     }
