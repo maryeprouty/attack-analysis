@@ -12,6 +12,7 @@ import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleDirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
+import com.mxgraph.model.mxCell;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,7 +56,7 @@ class TacticGraphBuilder {
     private static TechnicalImpact hide = new TechnicalImpact("Hide activities", new ArrayList<>(
            Collections.singletonList("78")));
 
-    static ArrayList<TechnicalImpact> impactVertices = new ArrayList<>(Arrays.asList(unauth, gain,
+    private static ArrayList<TechnicalImpact> impactVertices = new ArrayList<>(Arrays.asList(unauth, gain,
             read, modify, dosEx, dosRsrc, bypass, hide));
 
 
@@ -140,6 +141,20 @@ class TacticGraphBuilder {
 
         return d;
 
+    }
+
+    /**
+     * This method converts an mxCell to a Technical Impact.
+     * @param cell The mxgraph cell being considered or selected.
+     * @return The Technical Impact associated with the cell, or null if it's another type of Vertex.
+     */
+    static TechnicalImpact cellToImpact(mxCell cell) {
+        for (TechnicalImpact impact: impactVertices) {
+            if (impact.toString().equals(cell.getValue().toString())) {
+                return impact;
+            }
+        }
+        return null;
     }
 
 }

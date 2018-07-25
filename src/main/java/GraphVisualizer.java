@@ -160,16 +160,11 @@ class GraphVisualizer extends JApplet {
             mxGeometry geo = cell.getGeometry();
 
             geo.setHeight(30);
-            boolean found = false;
-            for (TechnicalImpact impact: TacticGraphBuilder.impactVertices) {
-                if (impact.toString().equals(cell.getValue().toString())) {
-                    geo.setWidth(225);
-                    impactCells[i++] = c;
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
+            TechnicalImpact impact = TacticGraphBuilder.cellToImpact(cell);
+            if (impact != null) {
+                geo.setWidth(225);
+                impactCells[i++] = c;
+            } else {
                 geo.setWidth(125);
             }
         }
@@ -182,11 +177,9 @@ class GraphVisualizer extends JApplet {
             public void mouseReleased(MouseEvent e) {
                 mxCell cell =(mxCell) component.getCellAt(e.getX(), e.getY());
                 if (cell != null) {
-                    for (TechnicalImpact impact: TacticGraphBuilder.impactVertices) {
-                        if (impact.toString().equals(cell.getValue().toString())) {
-                            JOptionPane.showMessageDialog(component, impact.cwesToString());
-                            break;
-                        }
+                    TechnicalImpact impact = TacticGraphBuilder.cellToImpact(cell);
+                    if (impact != null) {
+                        JOptionPane.showMessageDialog(component, impact.cwesToString());
                     }
                 }
             }
