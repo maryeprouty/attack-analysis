@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f2397e1-846e-41f7-9ba6-52893a41121a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphs.png" afterPath="$PROJECT_DIR$/graphs.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
     </list>
     <ignored path="attack-analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -796,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532548905605</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Comments">
+      <created>1532549801451</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1532549801451</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -844,7 +849,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Graphs built with Vertex instead of String &amp; javadocs" />
     <MESSAGE value="GraphNavigator finds CWEs through association graph" />
     <MESSAGE value="findDependentTactics method" />
     <MESSAGE value="Returning empty set" />
@@ -869,7 +873,8 @@
     <MESSAGE value="Making color code look prettier" />
     <MESSAGE value="Encapsulating impactVertices ArrayList" />
     <MESSAGE value="Clickable Tactics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clickable Tactics" />
+    <MESSAGE value="Comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
