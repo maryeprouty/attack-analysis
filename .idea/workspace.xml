@@ -4,7 +4,7 @@
     <list default="true" id="0f2397e1-846e-41f7-9ba6-52893a41121a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphs.png" afterPath="$PROJECT_DIR$/graphs.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" afterPath="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
     </list>
     <ignored path="attack-analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,24 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AttackAnalysis.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AttackAnalysis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/AttackAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="133" column="70" selection-start-line="133" selection-start-column="70" selection-end-line="133" selection-end-column="70" />
+            <state relative-caret-position="128">
+              <caret line="129" column="66" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
               <folding>
-                <element signature="e#0#5883#0" expanded="true" />
+                <element signature="e#0#5909#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphVisualizer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphVisualizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GraphVisualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="174" column="81" selection-start-line="174" selection-start-column="81" selection-end-line="174" selection-end-column="81" />
+            <state relative-caret-position="319">
+              <caret line="185" column="79" selection-start-line="185" selection-start-column="79" selection-end-line="185" selection-end-column="79" />
               <folding>
                 <element signature="e#0#8161#0" expanded="true" />
                 <element signature="e#6915#7605#0" expanded="true" />
@@ -134,10 +134,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Tactic.java" />
         <option value="$PROJECT_DIR$/src/main/java/GraphNavigator.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/TechnicalImpact.java" />
         <option value="$PROJECT_DIR$/src/main/java/TacticGraphBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/GraphVisualizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AttackAnalysis.java" />
       </list>
     </option>
   </component>
@@ -789,12 +789,19 @@
       <option name="project" value="LOCAL" />
       <updated>1532548268189</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Clickable Tactics">
+      <created>1532548905605</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1532548905605</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="23" width="1440" height="825" extended-state="6" />
-    <editor active="true" />
+    <frame x="-3" y="23" width="1440" height="825" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -808,7 +815,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -837,7 +844,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vertex class and concrete subclasses" />
     <MESSAGE value="Graphs built with Vertex instead of String &amp; javadocs" />
     <MESSAGE value="GraphNavigator finds CWEs through association graph" />
     <MESSAGE value="findDependentTactics method" />
@@ -862,7 +868,8 @@
     <MESSAGE value="Alert dialog for Technical Impacts" />
     <MESSAGE value="Making color code look prettier" />
     <MESSAGE value="Encapsulating impactVertices ArrayList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Encapsulating impactVertices ArrayList" />
+    <MESSAGE value="Clickable Tactics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clickable Tactics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -922,7 +929,7 @@
         <state relative-caret-position="30">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#0#5883#0" expanded="true" />
+            <element signature="e#0#5909#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -975,7 +982,7 @@
         <state relative-caret-position="30">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#0#5883#0" expanded="true" />
+            <element signature="e#0#5909#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1190,11 +1197,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphs.jpg" />
-    <entry file="file://$PROJECT_DIR$/graphs.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TechnicalImpact.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1210,17 +1212,6 @@
           <folding>
             <element signature="e#708#709#0" expanded="true" />
             <element signature="e#749#750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AttackAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="133" column="70" selection-start-line="133" selection-start-column="70" selection-end-line="133" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#5883#0" expanded="true" />
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1247,12 +1238,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GraphVisualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="174" column="81" selection-start-line="174" selection-start-column="81" selection-end-line="174" selection-end-column="81" />
+        <state relative-caret-position="319">
+          <caret line="185" column="79" selection-start-line="185" selection-start-column="79" selection-end-line="185" selection-end-column="79" />
           <folding>
             <element signature="e#0#8161#0" expanded="true" />
             <element signature="e#6915#7605#0" expanded="true" />
             <element signature="e#7604#7605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AttackAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="129" column="66" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#5909#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

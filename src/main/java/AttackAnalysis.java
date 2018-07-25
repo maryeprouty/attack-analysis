@@ -128,19 +128,19 @@ public class AttackAnalysis {
         frame.setVisible(true);
 
         //Save the Swing JFrame to graphs.png for future reference
-        BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(),
-        BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g = image.createGraphics();
-        for (Component comp: frame.getContentPane().getComponents()) {
-            comp.paint(g);
-        }
-        g.dispose();
-
-        try{
-            ImageIO.write(image, "png", new File("graphs.png"));
-        }catch(IOException e){
-            System.err.println(e.toString());
-        }
+//        BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(),
+//        BufferedImage.TYPE_INT_ARGB);
+//        Graphics2D g = image.createGraphics();
+//        for (Component comp: frame.getContentPane().getComponents()) {
+//            comp.paint(g);
+//        }
+//        g.dispose();
+//
+//        try{
+//            ImageIO.write(image, "png", new File("graphs.png"));
+//        }catch(IOException e){
+//            System.err.println(e.toString());
+//        }
 
     }
 
