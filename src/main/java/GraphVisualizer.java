@@ -169,9 +169,10 @@ class GraphVisualizer extends JApplet {
             }
         }
 
-        //Set the color of Technical Impacts to be darker blue and add MouseListener to each impact
+        //Set the color of Technical Impacts to be darker blue
         graph.setCellStyles(mxConstants.STYLE_FILLCOLOR, mxHtmlColor.hexString(powderblue), impactCells);
 
+        //Allow vertices to be clickable and show CWE details in an alert dialog.
         component.getGraphControl().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -180,6 +181,9 @@ class GraphVisualizer extends JApplet {
                     TechnicalImpact impact = TacticGraphBuilder.cellToImpact(cell);
                     if (impact != null) {
                         JOptionPane.showMessageDialog(component, impact.cwesToString());
+                    } else {
+                        GraphNavigator g = new GraphNavigator(cell.getValue().toString());
+                        JOptionPane.showMessageDialog(component, g.toString());
                     }
                 }
             }
