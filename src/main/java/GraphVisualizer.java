@@ -90,15 +90,24 @@ class GraphVisualizer extends JApplet {
         cc.gridx = 0;
         cc.gridy = 0;
         cc.insets = new Insets(5, 5, 5, 5);
+        JPanel atPanel = new JPanel();
+        atPanel.setBackground(darkpowder);
+        atPanel.add(new JLabel("\t\t"));
+        colorCode.add(atPanel, cc);
+        cc.gridy++;
+        JPanel tiPanel = new JPanel();
+        tiPanel.setBackground(powderblue);
+        tiPanel.add(new JLabel("\t\t"));
+        colorCode.add(tiPanel, cc);
+        cc.gridx++;
+        cc.gridy--;
         JLabel atLabel = new JLabel("Attack Tactic");
         Font atFont = new Font("Times New Roman", Font.BOLD, 14);
         atLabel.setFont(atFont);
-        atLabel.setForeground(darkpowder);
         colorCode.add(atLabel, cc);
         cc.gridy++;
         JLabel tiLabel = new JLabel("Technical Impact");
         tiLabel.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        tiLabel.setForeground(powderblue);
         colorCode.add(tiLabel, cc);
         cc.gridx++;
         colorCode.add(new JLabel("https://cwe.mitre.org/community/swa/detection_methods.html"), cc);
@@ -184,9 +193,9 @@ class GraphVisualizer extends JApplet {
         });
 
         //Center the graph within a larger border
-        graph.setBorder(40);
+        graph.setBorder(30);
         mxGraphView view = graph.getView();
-        view.setTranslate(new mxPoint(25, 25));
+        view.setTranslate(new mxPoint(20, 20));
 
         //Format the layout of each graph to be hierarchical with a west orientation
         mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
