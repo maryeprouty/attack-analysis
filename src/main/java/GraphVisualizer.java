@@ -84,8 +84,10 @@ class GraphVisualizer extends JApplet {
         panel.add(dependencyComponent, c);
 
         //Illustrate the color coding system and give references to mitre
+        JPanel colorBackground = new JPanel();
+        colorBackground.setBackground(beige);
         JPanel colorCode = new JPanel(new GridBagLayout());
-        colorCode.setBackground(Color.white);
+        colorCode.setBackground(beige);
         GridBagConstraints cc = new GridBagConstraints();
         cc.gridx = 0;
         cc.gridy = 0;
@@ -114,7 +116,8 @@ class GraphVisualizer extends JApplet {
         cc.gridy--;
         colorCode.add(new JLabel("https://attack.mitre.org/wiki/Main_Page"), cc);
         c.gridy++;
-        panel.add(colorCode, c);
+        colorBackground.add(colorCode);
+        panel.add(colorBackground, c);
 
 
     }

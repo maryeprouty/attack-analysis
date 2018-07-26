@@ -1,0 +1,34 @@
+Attack 1 - Initial Access:
+	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
+	dependently associated with CWEs 120, 129, 131, 134, 190, 352, 400, 426, 770, 78, 79, 798, 805, 98.
+Attack 2 - Command and Control:
+	directly associated with CWEs 78;
+	no CWEs from dependencies.
+Attack 3 - Execution:
+	directly associated with CWEs 120, 129, 131, 134, 190, 352, 400, 426, 770, 78, 79, 798, 805, 98;
+	no CWEs from dependencies.
+Attack 4 - Exfiltration:
+	directly associated with CWEs 129, 131, 190, 352, 78, 89;
+	no CWEs from dependencies.
+Attack 5 - Command and Control:
+	directly associated with CWEs 78;
+	no CWEs from dependencies.
+Attack 6 - Privilege Escalation:
+	directly associated with CWEs 306, 352, 426, 601, 798, 807;
+	no CWEs from dependencies.
+Attack 7 - Lateral Movement:
+	directly associated with CWEs 120, 190, 400, 770, 805;
+	dependently associated with CWEs 120, 129, 131, 134, 190, 306, 352, 400, 426, 601, 770, 78, 79, 798, 805, 807, 98.
+Attack 8 - Lateral Movement:
+	directly associated with CWEs 120, 190, 400, 770, 805;
+	dependently associated with CWEs 120, 129, 131, 134, 190, 306, 352, 400, 426, 601, 770, 78, 79, 798, 805, 807, 98.
+Attack 9 - Initial Access:
+	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
+	dependently associated with CWEs 120, 129, 131, 134, 190, 352, 400, 426, 770, 78, 79, 798, 805, 98.
+Attack 10 - Initial Access:
+	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
+	dependently associated with CWEs 120, 129, 131, 134, 190, 352, 400, 426, 770, 78, 79, 798, 805, 98.
+Attack 11 - Discovery:
+	directly associated with no CWEs;
+	dependently associated with CWEs 129, 131, 134, 190, 352, 426, 78, 79, 798, 89.
+

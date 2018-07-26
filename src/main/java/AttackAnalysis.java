@@ -8,18 +8,13 @@
 */
 
 
-import java.awt.*;
-import java.awt.Component;
+import java.awt.GridBagConstraints;
 import java.util.Map;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
 
 import javax.swing.JFrame;
-import java.io.File;
-import java.io.IOException;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 
 
 public class AttackAnalysis {
