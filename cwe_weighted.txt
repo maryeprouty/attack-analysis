@@ -14,7 +14,7 @@ Attack 5 - Command and Control:
 	directly associated with CWEs 78;
 	no CWEs from dependencies.
 Attack 6 - Persistence:
-	directly associated with CWEs 190, 306, 352, 400, 426, 601, 79, 798, 807, 89;
+	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
 	no CWEs from dependencies.
 Attack 7 - Lateral Movement:
 	directly associated with CWEs 120, 190, 400, 770, 805;
@@ -26,7 +26,7 @@ Attack 9 - Initial Access:
 	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
 	dependently associated with CWEs 120, 129, 131, 134, 190, 352, 400, 426, 770, 78, 79, 798, 805, 98.
 Attack 10 - Persistence:
-	directly associated with CWEs 190, 306, 352, 400, 426, 601, 79, 798, 807, 89;
+	directly associated with CWEs 190, 352, 400, 601, 79, 798, 807, 89;
 	no CWEs from dependencies.
 Attack 11 - Discovery:
 	directly associated with no CWEs;

@@ -95,7 +95,6 @@ class TacticGraphBuilder {
         g.addEdge(xc, unauth);
         g.addEdge(xc, dosEx);
         g.addEdge(xc, dosRsrc);
-        g.addEdge(p, gain);
         g.addEdge(p, bypass);
         g.addEdge(pe, gain);
         g.addEdge(lm, dosRsrc);
@@ -105,6 +104,7 @@ class TacticGraphBuilder {
         g.addEdge(c, read);
         g.addEdge(xf, modify);
         g.addEdge(cc, hide);
+
 
         return g;
 
@@ -137,6 +137,9 @@ class TacticGraphBuilder {
         d.addEdge(xc, ia);
         d.addEdge(xc, lm);
         d.addEdge(pe, lm);
+
+        d.addEdge(p, ca);
+        d.addEdge(cc, ds);
 
 
         return d;
